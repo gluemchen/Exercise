@@ -32,38 +32,36 @@ def minesweeper(grid, bomb):  # Function to create a minesweeper board
         # if x == 4:
         #     arr[y][x - 1] += 1                         # center left
 
-        if (x >= grid - 4 and x <= grid - 1) and (
-            y >= grid - 4 and y <= grid - 1
-        ):  # top left
+        if (x >= grid - 4 and x <= grid) and (y >= grid - 4 and y <= grid):  # top left
             if arr[y - 1][x - 1] != "X":  # skip if X is already placed
                 arr[y - 1][x - 1] += 1
 
-        if (x >= grid - 4 and x <= grid - 1) and (
-            y >= grid - 3 and y <= grid - 1
+        if (x >= grid - 5 and x <= grid - 1) and (
+            y >= grid - 4 and y <= grid
         ):  # top right
             if arr[y - 1][x + 1] != "X":  # skip if X is already placed
                 arr[y - 1][x + 1] += 1
 
-        if (x >= grid - 4 and x <= grid - 1) and (
-            y >= grid - 3 and y <= grid - 1
+        if (x >= grid - 5 and x <= grid) and (
+            y >= grid - 4 and y <= grid
         ):  # top center
             if arr[y - 1][x] != "X":  # skip if X is already placed
                 arr[y - 1][x] += 1
 
-        if (x >= grid - 4 and x <= grid - 2) and (
-            y >= grid - 4 and y <= grid - 2
+        if (x >= grid - 5 and x <= grid - 1) and (
+            y >= grid - 5 and y <= grid - 1
         ):  # bottom right
             if arr[y + 1][x + 1] != "X":  # skip if X is already placed
                 arr[y + 1][x + 1] += 1
 
-        if (x >= grid - 3 and x <= grid) and (
-            y >= grid - 4 and y <= grid - 1
+        if (x >= grid - 4 and x <= grid) and (
+            y >= grid - 5 and y <= grid - 1
         ):  # bottom left
             if arr[y + 1][x - 1] != "X":  # skip if X is already placed
                 arr[y + 1][x - 1] += 1
 
-        if (x >= grid - 4 and x <= grid - 1) and (
-            y >= grid - 4 and y <= grid - 2
+        if (x >= grid - 5 and x <= grid) and (
+            y >= grid - 5 and y <= grid - 1
         ):  # bottom center
             if arr[y + 1][x] != "X":  # skip if X is already placed
                 arr[y + 1][x] += 1
