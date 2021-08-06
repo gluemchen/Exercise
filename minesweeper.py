@@ -14,14 +14,14 @@ def minesweeper(grid, bomb):  # Function to create a minesweeper board
         arr[y][x] = "X"
 
         #                           0    1    2    3    4
-        if (x >= grid - 5 and x <= grid - 1) and (
-            y >= grid - 5 and y <= grid
+        if (x >= 0 and x <= grid - 1) and (
+            y >= 0 and y <= grid
         ):  # I this case exists    0.['?']['?']['?']['?']['0']
             if arr[y][x + 1] != "X":
                 arr[y][x + 1] += 1  # center right          0.['X']['X']['X']['X']['-']
 
-        if (x >= grid - 4 and x <= grid) and (
-            y >= grid - 5 and y <= grid
+        if (x >= 1 and x <= grid) and (
+            y >= 0 and y <= grid
         ):  # I this case exists    0.['0']['?']['?']['?']['?']
             if arr[y][x - 1] != "X":
                 arr[y][x - 1] += 1  # center left           0.['-']['X']['X']['X']['X']
@@ -32,37 +32,27 @@ def minesweeper(grid, bomb):  # Function to create a minesweeper board
         # if x == 4:
         #     arr[y][x - 1] += 1                         # center left
 
-        if (x >= grid - 4 and x <= grid) and (y >= grid - 4 and y <= grid):  # top left
+        if (x >= 1 and x <= grid) and (y >= 1 and y <= grid):  # top left
             if arr[y - 1][x - 1] != "X":  # skip if X is already placed
                 arr[y - 1][x - 1] += 1
 
-        if (x >= grid - 5 and x <= grid - 1) and (
-            y >= grid - 4 and y <= grid
-        ):  # top right
+        if (x >= 0 and x <= grid - 1) and (y >= 1 and y <= grid):  # top right
             if arr[y - 1][x + 1] != "X":  # skip if X is already placed
                 arr[y - 1][x + 1] += 1
 
-        if (x >= grid - 5 and x <= grid) and (
-            y >= grid - 4 and y <= grid
-        ):  # top center
+        if (x >= 0 and x <= grid) and (y >= 1 and y <= grid):  # top center
             if arr[y - 1][x] != "X":  # skip if X is already placed
                 arr[y - 1][x] += 1
 
-        if (x >= grid - 5 and x <= grid - 1) and (
-            y >= grid - 5 and y <= grid - 1
-        ):  # bottom right
+        if (x >= 0 and x <= grid - 1) and (y >= 0 and y <= grid - 1):  # bottom right
             if arr[y + 1][x + 1] != "X":  # skip if X is already placed
                 arr[y + 1][x + 1] += 1
 
-        if (x >= grid - 4 and x <= grid) and (
-            y >= grid - 5 and y <= grid - 1
-        ):  # bottom left
+        if (x >= 1 and x <= grid) and (y >= 0 and y <= grid - 1):  # bottom left
             if arr[y + 1][x - 1] != "X":  # skip if X is already placed
                 arr[y + 1][x - 1] += 1
 
-        if (x >= grid - 5 and x <= grid) and (
-            y >= grid - 5 and y <= grid - 1
-        ):  # bottom center
+        if (x >= 0 and x <= grid) and (y >= 0 and y <= grid - 1):  # bottom center
             if arr[y + 1][x] != "X":  # skip if X is already placed
                 arr[y + 1][x] += 1
 
@@ -73,5 +63,5 @@ def minesweeper(grid, bomb):  # Function to create a minesweeper board
 
 if __name__ == "__main__":
     minesweeper(5, 3)  # Beginner
-    minesweeper(6, 8)  # Intermediate
-    minesweeper(8, 20)  # Expert
+    # minesweeper(6, 8)  # Intermediate
+    # minesweeper(8, 20)  # Expert
